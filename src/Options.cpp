@@ -113,6 +113,7 @@ std::ostream& operator<<(std::ostream& stream, const Options& opts)
 
   stream << "  random seed: " << opts.random_seed << endl;
   stream << "  tip-inner: " << (opts.use_tip_inner ? "ON" : "OFF") << endl;
+  stream << "  repeats: " << (opts.use_repeats ? "ON" : "OFF") << endl;
   stream << "  pattern compression: " << (opts.use_pattern_compression ? "ON" : "OFF") << endl;
 
   if (opts.command == Command::search)

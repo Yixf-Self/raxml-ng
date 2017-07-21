@@ -446,6 +446,16 @@ pll_partition_t* create_pll_partition(const Options& opts, const PartitionInfo& 
     if ((unsigned long) msa.length() > min_len_ti)
       attrs |= PLL_ATTRIB_PATTERN_TIP;
   }
+  if (opts.use_repeats)
+  {
+    if (opts.use_tip_inner)
+    {
+      throw runtime_error("Repeats and tip-inner optimizations are incompatible\n");
+    }
+    const unsigned long min_len_ti = 16;
+    if ((unsigned long) msa.length() > min_len_ti)
+      attrs |= PLL_ATTRIB_SITES_REPEATS;
+  }
 
   // NOTE: if partition is split among multiple threads, asc. bias correction must be applied only once!
   if (model.ascbias_type() == AscBiasCorrection::lewis ||

@@ -19,7 +19,7 @@ struct OutputFileNames
 class Options
 {
 public:
-  Options() : cmdline(""), command(Command::none), use_tip_inner(true),
+  Options() : cmdline(""), command(Command::none), use_tip_inner(true), use_repeats(false),
   use_pattern_compression(true), use_prob_msa(false), use_rate_scalers(false),
   optimize_model(true), optimize_brlen(true), redo_mode(false), force_mode(false),
   log_level(LogLevel::progress),
@@ -38,6 +38,7 @@ public:
   Command command;
 
   bool use_tip_inner;
+  bool use_repeats;
   bool use_pattern_compression;
   bool use_prob_msa;
   bool use_rate_scalers;
