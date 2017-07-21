@@ -454,7 +454,7 @@ pll_partition_t* create_pll_partition(const Options& opts, const PartitionInfo& 
     }
     const unsigned long min_len_ti = 16;
     if ((unsigned long) msa.length() > min_len_ti)
-      attrs |= PLL_ATTRIB_SITES_REPEATS;
+      attrs |= PLL_ATTRIB_SITE_REPEATS;
   }
 
   // NOTE: if partition is split among multiple threads, asc. bias correction must be applied only once!
